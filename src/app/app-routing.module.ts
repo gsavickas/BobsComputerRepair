@@ -10,10 +10,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { ContactComponent } from './contact/contact.component';
+import { RepairServicesComponent } from './repair-services/repair-services.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
-  {path: '', component: BookListComponent},
+  {path: '', component: RepairServicesComponent},
   {path: 'book-list', component: BookListComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
