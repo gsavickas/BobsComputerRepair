@@ -12,4 +12,5 @@ export interface RepairItem {
     cost: number;
     // TODO: Add this as a time object
     repairTime: string;
+    description: string;
 }
