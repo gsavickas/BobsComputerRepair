@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { RepairItem } from './repair-item.interface'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
+import {of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,9 +48,16 @@ export class RepairService {
     ]
   }
 
-  getRepairs(): Observable<>
+  getRepairs(): Observable<RepairItem[]>{
+    return of (this.repairs)
+  }
 
-   searchByTitle(: string){
-    return this.title.some(title => title === repairTitle);
+   searchByTitle(title: string): RepairItem{
+    for (let RepairItem of this.repairs){
+      if (RepairItem.title.toLowerCase() == title.toLowerCase()){
+        return RepairItem;
+      }
+      return {} as RepairItem;
+      }
    }
 }
