@@ -9,12 +9,18 @@
     <div class="grade-form" fxFlex>
         <mat-card class="mat-elevation-z8">
             <mat-card-title>Search for Repairs</mat-card-title>
-        </mat-card>
+        
 
         <mat-card-content>
-            <mat-form>
-                
-            </mat-form>
+          <form fxLayout="column" fxLayoutGap="16px" [formGroup]="repairForm" (ngSubmit)="onSubmit($event); repairForm.reset()">
+            <mat-form-field fxFlex appearance="fill">
+              <mat-label>Repair</mat-label>
+              <input type="text" name="txtTitle" required id="textTitle" matInput formControlName="repair"/>
+            </mat-form-field>
+
+            <button type="submit" [disabled]="!repairForm.valid" mat-raised-button color="primary">Submit</button>
+          </form>
         </mat-card-content>
+      </mat-card>
     </div>
  </div>
