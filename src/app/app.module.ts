@@ -30,6 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
+import { RepairServicesComponent } from './repair-services/repair-services.component';
+import { RepairListComponent } from './repair-list/repair-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
     BookListComponent,
     BookDetailsDialogComponent,
     WishlistComponent,
-    WishlistCreateComponent
+    WishlistCreateComponent,
+    RepairServicesComponent,
+    RepairListComponent
   ],
   imports: [
     BrowserModule,

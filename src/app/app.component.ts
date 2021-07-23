@@ -13,5 +13,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  assignment = 'Welcome to In-N-Out-Books';
+  assignment = "Bob's Computer Repair Shop";
 }
