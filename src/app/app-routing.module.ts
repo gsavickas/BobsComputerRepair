@@ -1,26 +1,51 @@
 /**
  * Title: app.component.ts
  * Author: Grayton Savickas
- * Date: 27 June 2021
+ * Date: 11 July 2021
  * Description: App component
  */
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { ContactComponent } from './contact/contact.component';
-import { RepairListComponent } from './repair-list/repair-list.component';
-import { RepairServicesComponent } from './repair-services/repair-services.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { BaseLayoutComponent } from './base-layout/base-layout.component';
+import { HomeComponent } from './home/home.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SignInGuard } from './sign-in.guard';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 const routes: Routes = [
-  {path: '', component: RepairServicesComponent},
-  {path: 'repair-list', component: RepairListComponent},
-  {path: 'book-list', component: BookListComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'wishlist', component: WishlistComponent}
+  {
+    path:'',
+    component: BaseLayoutComponent,
+    children: [
+      {
+          path: '',
+        component: HomeComponent
+      }
+    ],
+    canActivate: [SignInGuard]
+  },
+
+  {
+    path:'session',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'not-found',
+        component: NotFoundComponent
+      },
+      {
+        path: 'sign-in',
+        component: SignInComponent
+      }
+    ]
+  },
+
+  {
+    path:'**',
+    redirectTo: 'session/not-found'
+  }
 ];
 
 @NgModule({

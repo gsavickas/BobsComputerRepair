@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/in-n-out-booksp1'),
+      dir: require('path').join(__dirname, './coverage/gpa-calculator-app1'),
       subdir: '.',
       reporters: [
         { type: 'html' },

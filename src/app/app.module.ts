@@ -1,69 +1,72 @@
 /**
  * Title: app.component.ts
  * Author: Grayton Savickas
- * Date: 27 June 2021
+ * Date: 11 July 2021
  * Description: App component
  */
+
+// 	import { MatFormFieldModule } from ‘@angular/material/form-field’;
+// 	import { MatInputModule } from ‘@angular/material/input’;
+// 	import { MatListModule } from ‘@angular/material/list’;
+// 	import { FormsModule } from ‘@angular/forms’;
+// 	import { MatSelectModule } from ‘@angular/material/select’;
+
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { BaseLayoutComponent } from './base-layout/base-layout.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
-import { BookDetailsDialogComponent } from './book-details-dialog/book-details-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { WishlistComponent } from './wishlist/wishlist.component';
-import { WishlistCreateComponent } from './wishlist-create/wishlist-create.component';
-import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { GpaComponent } from './gpa/gpa.component';
+import { GradeSummaryComponent } from './grade-summary/grade-summary.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
-import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
-import { RepairServicesComponent } from './repair-services/repair-services.component';
-import { RepairListComponent } from './repair-list/repair-list.component';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    ContactComponent,
-    BookListComponent,
-    BookDetailsDialogComponent,
-    WishlistComponent,
-    WishlistCreateComponent,
-    RepairServicesComponent,
-    RepairListComponent
+    BaseLayoutComponent,
+    AuthLayoutComponent,
+    NotFoundComponent,
+    HomeComponent,
+    GpaComponent,
+    GradeSummaryComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
     FlexLayoutModule,
-    MatIconModule,
-    MatTableModule,
-    MatDialogModule,
-    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    RouterModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule,
-    MatProgressSpinnerModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule
+
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
