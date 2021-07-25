@@ -8,6 +8,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { IRepair } from '../repair.interface';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-home',
@@ -19,14 +20,30 @@ export class HomeComponent implements OnInit {
   repairItems: Array<IRepair> = [
     {
       repairId: 12345,
-      type: "screen",
+      type: "phone",
       title: "Phone screen",
       cost: 200,
       repairTime: "1 hr",
       description: "Replace cell phone screen."
     },
     {
-      repairId: 12345,
+      repairId: 12365,
+      type: "computer",
+      title: "Replace CPU",
+      cost: 250,
+      repairTime: "30 min",
+      description: "Upgrade or replace computer CPU."
+    },
+    {
+      repairId: 12347,
+      type: "phone",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12348,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -34,7 +51,7 @@ export class HomeComponent implements OnInit {
       description: "Replace WiFi connection within cell phone."
     },
     {
-      repairId: 12345,
+      repairId: 12349,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -42,7 +59,7 @@ export class HomeComponent implements OnInit {
       description: "Replace WiFi connection within cell phone."
     },
     {
-      repairId: 12345,
+      repairId: 12315,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -50,30 +67,14 @@ export class HomeComponent implements OnInit {
       description: "Replace WiFi connection within cell phone."
     },
     {
-      repairId: 12345,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 12345,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 12345,
+      repairId: 12325,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
       repairTime: "2 hr",
       description: "Replace WiFi connection within cell phone."
     },{
-      repairId: 12345,
+      repairId: 12145,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -81,7 +82,7 @@ export class HomeComponent implements OnInit {
       description: "Replace WiFi connection within cell phone."
     },
     {
-      repairId: 12345,
+      repairId: 12845,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -89,7 +90,7 @@ export class HomeComponent implements OnInit {
       description: "Replace WiFi connection within cell phone."
     },
     {
-      repairId: 12345,
+      repairId: 17345,
       type: "wifi",
       title: "Phone wifi connector",
       cost: 150,
@@ -100,25 +101,34 @@ export class HomeComponent implements OnInit {
 
   
 
-  repairServiceForm: FormGroup
+  repairServiceForm: FormGroup;
+  // repairCartForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
 
     this.repairServiceForm = {} as FormGroup;
+
+    // this.repairCartForm = {} as FormGroup;
    }
 
   ngOnInit(): void {
     this.repairServiceForm = this.fb.group({
       title: ['', Validators.required],
-      cost: ['', Validators.required],
-    })
-  }
+      type: ['', Validators.required],
+    });
 
-  
+    // this.repairCartForm = this.fb.group({
+    //   cartCheck: false
+    // });
+  }
 
   get form(){
     return this.repairServiceForm.controls;
   }
+
+  // addToCart(event: { currentTarget: {rest: () => void; }; }) {
+
+  // }
 
 
   onSubmit(event: { currentTarget: { reset: () => void; }; }) {

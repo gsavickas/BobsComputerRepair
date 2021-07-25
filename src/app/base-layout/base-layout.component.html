@@ -8,13 +8,14 @@
 <mat-toolbar color='primary'>
 
   <mat-toolbar-row>
-    <div class="logo">
+    <button routerLink="/" class="logo">
       <img src="../../assets/gpa-calculator-app.jpg" height="40">
-    </div>
+    </button>
 
-    <div style="width: 80%;">
+    <div style="width: 90%;">
       <div fx-layout="row wrap" fxLayoutAlign="end start">
         <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/session/cart">Cart</button>
         <button mat-button (click)="signOut()">Sign Out</button>
       </div>
     </div>

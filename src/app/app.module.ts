@@ -39,6 +39,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { CookieService } from 'ngx-cookie-service';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HomeComponent,
     GpaComponent,
     GradeSummaryComponent,
-    SignInComponent
+    SignInComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
