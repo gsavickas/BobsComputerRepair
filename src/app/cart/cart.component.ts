@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
     });
 
   ngOnInit(): void {
-    this.toppings = fb.group({
+    this.toppings = this.fb.group({
       pepperoni: false,
       extracheese: false,
       mushroom: false
