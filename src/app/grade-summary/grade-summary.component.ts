@@ -15,9 +15,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GradeSummaryComponent implements OnInit {
 
   @Input()
-  grade!: string;
+  title!: string;
   @Input()
-  course!: string;
+  cost!: number;
+  @Input()
+  description!: string;
 
   constructor() { }
 

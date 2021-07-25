@@ -19,7 +19,7 @@ export class BaseLayoutComponent implements OnInit {
   assignment : string;
 
   constructor(private cookieService: CookieService, private router: Router) {
-    this.assignment = "GPA Calculator";
+    this.assignment = "Bob's Computer Repair Shop";
   }
 
   ngOnInit(): void {

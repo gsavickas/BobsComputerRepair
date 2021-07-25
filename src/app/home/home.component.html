@@ -9,7 +9,7 @@
   <div class="grade-form" fxFlex>
     <mat-card class="mat-elevation-z8">
 
-      <mat-card-title>Repair Items</mat-card-title>
+      <mat-card-title>Search Repair Services</mat-card-title>
 
       <mat-card-content>
         <form fxLayout="column" fxLayoutGap="16px" [formGroup]="repairServiceForm" (ngSubmit)="onSubmit($event); repairServiceForm.reset()">
@@ -33,20 +33,24 @@
   </div>
 
   <div class="repairCart" fxFlex>
-    <button mat-button color="primary" (click)="clearEntries()">Clear Cart</button>
-    <mat-card class="mat-elevation-z8">
-      <mat-card-title>Transcript</mat-card-title>
-      <mat-card-content>
-        <app-grade-summary *ngFor="let entry of transcriptEntries" [course]="entry.course" [grade]="entry.grade"></app-grade-summary>
-      </mat-card-content>
-    </mat-card>
+    <h1>Repair Services</h1>
+    <div *ngFor="let entry of repairItems">
 
+    <mat-card class="mat-elevation-z8 ">
+      <mat-card-title >{{entry.title}}</mat-card-title>
+      <mat-card-content>
+        <app-grade-summary [cost]="entry.cost" [description]="entry.description"> </app-grade-summary>
+      </mat-card-content>
+      <mat-checkbox color="primary"> Add to Cart</mat-checkbox>
+    </mat-card>
+    <br><br>
+    </div>
   </div>
 </div>
 
 <br /><br />
 
-<div fxLayout="column" fxLayoutGap="20px">
+<!-- <div fxLayout="column" fxLayoutGap="20px">
   <div fxFlex class="gpa">
     <button mat-button color="primary" (click)="calculateResults()">Calculate GPA</button>
 
@@ -56,4 +60,4 @@
       </mat-card-title>
     </mat-card>
   </div>
-</div>
+</div> -->

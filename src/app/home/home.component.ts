@@ -16,7 +16,89 @@ import { IRepair } from '../repair.interface';
 })
 export class HomeComponent implements OnInit {
 
-  repairItems: Array<IRepair> = [];
+  repairItems: Array<IRepair> = [
+    {
+      repairId: 12345,
+      type: "screen",
+      title: "Phone screen",
+      cost: 200,
+      repairTime: "1 hr",
+      description: "Replace cell phone screen."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },{
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    },
+    {
+      repairId: 12345,
+      type: "wifi",
+      title: "Phone wifi connector",
+      cost: 150,
+      repairTime: "2 hr",
+      description: "Replace WiFi connection within cell phone."
+    }
+  ];
+
+  
 
   repairServiceForm: FormGroup
 
@@ -29,9 +111,10 @@ export class HomeComponent implements OnInit {
     this.repairServiceForm = this.fb.group({
       title: ['', Validators.required],
       cost: ['', Validators.required],
-      
     })
   }
+
+  
 
   get form(){
     return this.repairServiceForm.controls;
@@ -56,6 +139,7 @@ export class HomeComponent implements OnInit {
   clearEntries() {
     this.repairItems = [];
   }
+
 
 
 }

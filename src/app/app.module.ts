@@ -37,6 +37,9 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CookieService } from 'ngx-cookie-service';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { CookieService } from 'ngx-cookie-service';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    MatGridListModule
 
   ],
   providers: [CookieService],
