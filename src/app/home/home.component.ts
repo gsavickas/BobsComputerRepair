@@ -17,6 +17,8 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class HomeComponent implements OnInit {
 
+  repairCart: Array<IRepair> = [];
+
   repairItems: Array<IRepair> = [
     {
       repairId: 12345,
@@ -37,18 +39,18 @@ export class HomeComponent implements OnInit {
     {
       repairId: 12347,
       type: "phone",
-      title: "Phone wifi connector",
+      title: "Phone Wifi Connector",
       cost: 150,
       repairTime: "2 hr",
       description: "Replace WiFi connection within cell phone."
     },
     {
       repairId: 12348,
-      type: "wifi",
-      title: "Phone wifi connector",
+      type: "key board",
+      title: "Key Board Cleaning",
       cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
+      repairTime: "45 min",
+      description: "Clean every key of a computer or laptop."
     },
     {
       repairId: 12349,
@@ -116,10 +118,6 @@ export class HomeComponent implements OnInit {
       title: ['', Validators.required],
       type: ['', Validators.required],
     });
-
-    // this.repairCartForm = this.fb.group({
-    //   cartCheck: false
-    // });
   }
 
   get form(){

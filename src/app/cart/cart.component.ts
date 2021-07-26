@@ -8,19 +8,14 @@ import { IRepair } from '../repair.interface';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  toppings: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.toppings = {} as FormGroup;
-    });
+   }
 
-  ngOnInit(): void {
-    this.toppings = this.fb.group({
-      pepperoni: false,
-      extracheese: false,
-      mushroom: false
-    })
+   ngOnInit(): void {
   }
 
   cart: Array<IRepair> = [];
+  
+  
 }
