@@ -54,51 +54,13 @@ export class HomeComponent implements OnInit {
     },
     {
       repairId: 12349,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 12315,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 12325,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },{
-      repairId: 12145,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 12845,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
-    },
-    {
-      repairId: 17345,
-      type: "wifi",
-      title: "Phone wifi connector",
-      cost: 150,
-      repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
+      type: "Phone",
+      title: "Phone Battery",
+      cost: 75,
+      repairTime: "5 min",
+      description: "Replace battery in cell phone."
     }
+
   ];
 
   
@@ -130,6 +92,9 @@ export class HomeComponent implements OnInit {
 
 
   onSubmit(event: { currentTarget: { reset: () => void; }; }) {
+    if (this.repairItems) {
+
+    }
     this.repairItems.push({
       title: this.form.title.value,
       cost: this.form.cost.value,
