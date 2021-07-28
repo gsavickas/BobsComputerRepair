@@ -8,7 +8,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { IRepair } from '../repair.interface';
-import { CartComponent } from '../cart/cart.component';
+import { FormsModule } from '@angular/forms';
+import { CartServiceService } from '../cart-service.service';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,10 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class HomeComponent implements OnInit {
 
-  repairCart: Array<IRepair> = [];
+  // repair items in cart
+  inCart: Array<IRepair> = [];
 
+  // existing repair items
   repairItems: Array<IRepair> = [
     {
       repairId: 12345,
@@ -26,7 +29,8 @@ export class HomeComponent implements OnInit {
       title: "Phone screen",
       cost: 200,
       repairTime: "1 hr",
-      description: "Replace cell phone screen."
+      description: "Replace cell phone screen.",
+      isInCart: false
     },
     {
       repairId: 12365,
@@ -34,7 +38,8 @@ export class HomeComponent implements OnInit {
       title: "Replace CPU",
       cost: 250,
       repairTime: "30 min",
-      description: "Upgrade or replace computer CPU."
+      description: "Upgrade or replace computer CPU.",
+      isInCart: false
     },
     {
       repairId: 12347,
@@ -42,7 +47,8 @@ export class HomeComponent implements OnInit {
       title: "Phone Wifi Connector",
       cost: 150,
       repairTime: "2 hr",
-      description: "Replace WiFi connection within cell phone."
+      description: "Replace WiFi connection within cell phone.",
+      isInCart: false
     },
     {
       repairId: 12348,
@@ -50,7 +56,8 @@ export class HomeComponent implements OnInit {
       title: "Key Board Cleaning",
       cost: 150,
       repairTime: "45 min",
-      description: "Clean every key of a computer or laptop."
+      description: "Clean every key of a computer or laptop.",
+      isInCart: false
     },
     {
       repairId: 12349,
@@ -58,15 +65,15 @@ export class HomeComponent implements OnInit {
       title: "Phone Battery",
       cost: 75,
       repairTime: "5 min",
-      description: "Replace battery in cell phone."
+      description: "Replace battery in cell phone.",
+      isInCart: false
     }
 
   ];
 
   
-
+  // form group
   repairServiceForm: FormGroup;
-  // repairCartForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
 
@@ -86,10 +93,6 @@ export class HomeComponent implements OnInit {
     return this.repairServiceForm.controls;
   }
 
-  // addToCart(event: { currentTarget: {rest: () => void; }; }) {
-
-  // }
-
 
   onSubmit(event: { currentTarget: { reset: () => void; }; }) {
     if (this.repairItems) {
@@ -101,17 +104,36 @@ export class HomeComponent implements OnInit {
       type: this.form.type.value,
       repairId: this.form.repairId.value,
       repairTime: this.form.repairTime.value,
-      description: this.form.description.value
+      description: this.form.description.value,
+      isInCart: this.form.isInCart.value
     });
 
     event.currentTarget.reset();
   }
+
+  // compares repair item ids to check repair item in the form
+  // adds matching repair item to inCart array
+  toggleCart(){
+      for (let entry of this.repairItems){
+        for (let i = 0; i < this.repairItems.length; i++){
+          if (this.repairItems[i].repairId === entry.repairId){
+            this.inCart.push(this.repairItems[i])
+            console.log(this.inCart[i])
+          }
+        }
+      }
+    }
+  
 
 
 
   clearEntries() {
     this.repairItems = [];
   }
+
+  // get itemFromCart(): IRepair {
+  //   return this.
+  // }
 
 
 

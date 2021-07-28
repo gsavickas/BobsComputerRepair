@@ -1,8 +1,3 @@
-// Title: app.component.ts
-// Author: Grayton Savickas
-// Date: 11 July 2021
-// Description: App component
-
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { IRepair } from '../repair.interface';
@@ -17,10 +12,7 @@ export class CartComponent implements OnInit {
   constructor(private fb: FormBuilder) {
    }
 
-   ngOnInit(): void {
+    ngOnInit(): void {
+    }
   }
 
-  cart: Array<IRepair> = [];
-  
-  
-}

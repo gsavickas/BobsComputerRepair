@@ -27,6 +27,7 @@
     </mat-card>
   </div>
 
+  <!-- populates the form with repair items -->
   <div class="repairCart" fxFlex>
     <h1>Repair Services</h1>
     <div *ngFor="let entry of repairItems">
@@ -35,7 +36,7 @@
       <mat-card-content>
         <app-grade-summary [cost]="entry.cost" [description]="entry.description"> </app-grade-summary>
       </mat-card-content>
-        <mat-checkbox color="primary"> Add to Cart</mat-checkbox>
+        <mat-checkbox id="{{entry.repairId}}" color="primary" [(ngModel)]="entry.isInCart" (change)="toggleCart()"> Add to Cart</mat-checkbox>
     </mat-card>
     <br><br>
     </div>

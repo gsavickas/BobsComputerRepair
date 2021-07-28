@@ -11,4 +11,5 @@ export interface IRepair {
     // TODO: Add this as a time object
     repairTime: string;
     description: string;
+    isInCart: false;
 }
